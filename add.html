@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		function validate() {
+			if (document.form1.name.value == '') {
+				alert('Please provide your name');
+				document.form1.name.focus();
+				return false;
+			}
+			if (document.form1.email.value == '') {
+				alert('Please provide your email');
+				document.form1.email.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container mt-4">
+	<a href="index.php" class="btn btn-secondary">Home</a>
+	<br/><br/>
+	<div id="msg"></div>
+
+	<form action="add.php" method="post" name="form1" onsubmit="return validate();">
+		<div class="form-group row">
+			<label for="name" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="name" name="name">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="age" class="col-sm-2 col-form-label">Age</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="age" name="age">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="email" class="col-sm-2 col-form-label">Email</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="email" name="email">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10 offset-sm-2">
+				<input type="submit" class="btn btn-primary" name="Submit" value="Add">
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
